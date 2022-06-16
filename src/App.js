@@ -35,11 +35,11 @@ function App() {
       return [expense, ...prevValue]
     })
   }
-
+  
   return (
     <div className="App">
-      <NewExpense  onAddExpense={addExpense}/>
-      <Expense expenses={expenses} />
+        <NewExpense  onAddExpense={addExpense}/> 
+        <Expense expenses={expenses} />
     </div>
   );
 }

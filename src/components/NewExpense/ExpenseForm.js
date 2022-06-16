@@ -1,7 +1,7 @@
 import "./ExpenseForm.css"
 import { useState } from "react";
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
+const ExpenseForm = ({ onSaveExpenseData, changeIsAdding }) => {
 
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
@@ -38,7 +38,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label htmlFor="">Title</label>
-                <input type="text" value={enteredTitle} onChange={titleChangedHandler} />
+                <input type="text" value={enteredTitle} onChange={titleChangedHandler} required />
             </div>
             <div className="new-expense__control">
                 <label htmlFor="">Amount</label>
@@ -50,6 +50,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
             </div>
         </div>
         <div className="new-expense__actions">
+            <button onClick={changeIsAdding}>Cancel</button>
             <button type="submit">Add Expense</button>
         </div>
     </form>
